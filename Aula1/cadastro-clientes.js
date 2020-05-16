@@ -8,8 +8,14 @@ formCadastrosClientes.addEventListener('submit', event =>{
     const nome = event.target.querySelector('[data-nome]')
     const cpf = event.target.querySelector('[data-cpf]')
 
-    cadastrarClientes(nome.value, cpf.value) //Essa é a função de cadastrar clientes na API
-    //que foi elaborada no arquivo "cliente.js"
+    
+    if(validaCPF(cpf.value)){
+        cadastrarClientes(nome.value, cpf.value) //Essa é a função de cadastrar clientes na API
+        //que foi elaborada no arquivo "cliente.js
+    }else{
+        alert('CPF inválido ou já existente')   
+    }
+   
 
 
 })
